@@ -1,41 +1,35 @@
-# Praças de Pedágios de Minas Gerais
+# Toll Plazas of Minas Gerais
 
-Este projeto foi desenvolvido para realizar a raspagem de dados de pedágios no estado de Minas Gerais a partir do site emsampa.com.br. Através de um script em Python, os dados são extraídos automaticamente, organizados e salvos em um arquivo Excel para fácil acesso e análise.
+This project was developed to scrape toll data in the state of Minas Gerais from the site emsampa.com.br. Using a Python script, data is automatically extracted, organized, and saved to an Excel file for easy access and analysis.
 
-FUNCIONALIDADES PRINCIPAIS
+**KEY FEATURES**
 
-1. Raspagem de Dados de Pedágios
-O sistema realiza a raspagem de dados de várias praças de pedágio em Minas Gerais, extraindo informações como:
+1. **Toll Data Scraping**  
+   The system scrapes data from various toll plazas in Minas Gerais, extracting information such as:
+   - Highway, KM, Location, Number of Axles, and Toll Fee (Since)
 
-Rodovia, KM, Localidade, Número de Eixos e Valor da tarifa (Desde)
+2. **Integration with Pandas**  
+   The extracted data is organized into a Pandas DataFrame, facilitating data manipulation and analysis before export.
 
-2. Integração com o Pandas
-Os dados extraídos são organizados em um DataFrame do Pandas, facilitando a manipulação e análise dos dados antes de serem exportados.
+3. **Excel Export**  
+   The system automatically saves the scraped data to an Excel file, enabling further analysis in tools like Microsoft Excel, Google Sheets, or any compatible software.
 
-3. Exportação para Excel
-O sistema salva automaticamente os dados raspados em um arquivo Excel, permitindo uma análise posterior em ferramentas como Microsoft Excel, Google Sheets, ou qualquer outro software compatível.
+**TECHNOLOGIES USED**
 
-TECNOLOGIAS UTILIZADAS
+1. **Python**: Main language used for automating the scraping process.
+2. **Requests**: Used to make HTTP requests and retrieve the page's HTML content.
+3. **BeautifulSoup**: Library for parsing HTML and extracting data from tables.
+4. **Pandas**: Used to organize data into a DataFrame and export it to Excel.
+5. **OpenPyXL**: Auxiliary library for Pandas to save data in Excel files.
 
-1. Python: Linguagem principal utilizada para a automação do processo de raspagem.
+**HOW IT WORKS**
 
-2. Requests: Utilizado para realizar requisições HTTP e obter o conteúdo HTML da página.
+1. The script accesses emsampa.com.br and makes a request to obtain the HTML content.
+2. Using BeautifulSoup, it navigates the tables containing toll data.
+3. Data (highway, KM, location, axles, and fee) is extracted and organized into a list of dictionaries.
+4. The list is converted into a Pandas DataFrame.
+5. Data is saved to an Excel file named `TollPlazasMG.xlsx`.
 
-3. BeautifulSoup: Biblioteca para realizar o parse do HTML e extrair os dados das tabelas.
+**CONCLUSION**
 
-4. Pandas: Utilizado para organizar os dados em formato de DataFrame e realizar a exportação para Excel.
-
-5. OpenPyXL: Biblioteca auxiliar do Pandas para salvar os dados em arquivos Excel.
-
-
-COMO FUNCIONA
-
-O script acessa a página emsampa.com.br e faz uma requisição para obter o conteúdo HTML.
-Através da biblioteca BeautifulSoup, ele percorre as tabelas que contêm os dados de pedágio.
-Os dados são extraídos (rodovia, KM, localidade, eixos e tarifa) e organizados em uma lista de dicionários.
-A lista é convertida em um DataFrame do Pandas.
-Os dados são salvos em um arquivo Excel chamado PracasMG.xlsx.
-
-CONCLUSÃO
-
-Este projeto automatiza a coleta de informações sobre pedágios em Minas Gerais, oferecendo uma maneira simples de extrair e organizar dados úteis diretamente de uma página web. O sistema é eficiente e permite a exportação dos dados para um formato amplamente utilizado, facilitando a análise e o armazenamento dessas informações.
+This project automates the collection of toll information in Minas Gerais, providing a simple way to extract and organize useful data directly from a web page. The system is efficient and exports data in a widely-used format, simplifying data analysis and storage.
